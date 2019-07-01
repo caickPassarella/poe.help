@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Lato', 'sans-serif'
+}
