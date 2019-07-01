@@ -1,17 +1,11 @@
 import React from 'react';
-import './style.css'
+import { Link } from 'react-router';
 
 function Sidebar(prop) {
   return (
     <div className="sidebarWrapper">
-      <div className="logo">
-        <img src="" alt=""/>
-      </div>
-        <a href="/">Acts</a>
-        <a href="/">Endgame</a>
-        <a href="/">Lab</a>
+        <Link to="/"></Link>
+        <Link to="/"></Link>
     </div>
   )
 }
-
-export default Sidebar;
