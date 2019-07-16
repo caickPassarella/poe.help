@@ -8,12 +8,12 @@ class App extends Component {
 
   render() { 
     return (
-      <React.Fragment>
+      <>
         <div className="headerWrapper">
-          <Sidebar />
-          <Header />
+          <Sidebar/>
+          <Header/>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

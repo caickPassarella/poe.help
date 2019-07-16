@@ -7,4 +7,22 @@
 
 .headerBtns {
     float: right;
+    position: relative;
+}
+
+.headerBtns select {
+    background-color: #424242;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    color: #ffffff;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
 }

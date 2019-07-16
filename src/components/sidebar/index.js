@@ -1,15 +1,27 @@
 import React from 'react';
 import './style.css'
 
-function Sidebar(prop) {
+function SidebarLogo(props) {
+  return (
+    <div className="logo">
+    <img src={props.img} alt={props.alt}/>
+  </div>
+  )
+}
+
+function SidebarList(props) {
+  list = ['Acts', 'End', 'Lab']
+  return (
+    list.map((item) =>
+    <a href={props.href}>{item}</a>
+  ))
+}
+
+function Sidebar(props) {
   return (
     <div className="sidebarWrapper">
-      <div className="logo">
-        <img src="" alt=""/>
-      </div>
-        <a href="/">Acts</a>
-        <a href="/">Endgame</a>
-        <a href="/">Lab</a>
+        <SidebarLogo/>
+        <SidebarList/>
     </div>
   )
 }
