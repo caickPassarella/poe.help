@@ -1,17 +1,20 @@
 import React from 'react';
-import './style.css'
+import { Link } from 'react-router-dom';
+import './style.scss'
 
-function Sidebar(prop) {
+function Sidebar(props) {
   return (
     <div className="sidebarWrapper">
       <div className="logo">
-        <img src="" alt=""/>
+        <img src="" alt="" />
       </div>
-        <a href="/">Acts</a>
-        <a href="/">Endgame</a>
-        <a href="/">Lab</a>
+      {props.routes
+        .filter(route => !route.hidden)
+        .map(route => (
+          <Link to={route.path}>{route.name}</Link>
+      ))}
     </div>
-  )
+  );
 }
 
 export default Sidebar;

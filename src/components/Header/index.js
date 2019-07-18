@@ -1,19 +1,21 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
-function Header(prop) {
+function Header(props) {
   return (
-   <div className="header">
-    <div className="headerBtns">
+    <div className="header">
+      <div className="headerBtns">
         <select className="sellOption">
-            <option value="">Help</option>
+          <option value="">Help</option>
         </select>
         <select className="leagueOption">
-            <option value="">Hardcore</option>
+          {props.leagues.map(league => (
+            <option value={league}>{league}</option>
+          ))}
         </select>
+      </div>
     </div>
-   </div>
-  )
+  );
 }
 
 export default Header;

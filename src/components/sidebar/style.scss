@@ -1,0 +1,25 @@
+.sidebarWrapper {
+    width: 230px;
+    min-width: 230px;
+    height: 100vh;
+    background: #272525;
+    display: inline-block;
+   
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 24px;
+      font-weight: light;
+      border-left: 3px solid transparent;
+      transition: 0.1s;
+
+      &:hover {
+        border-left: 3px solid #d4d4d4
+      }
+    }
+ 
+    .logo {
+        border-bottom: 1px solid transparent;
+    }
+}
