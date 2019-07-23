@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import './style.scss'
 
+import { Provider } from '../Context';
+
 import routes from '../../routes';
 
 import Sidebar from "../../components/Sidebar";
-import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+//import Header from "../../components/Header";
+
+import { Layout } from 'antd';
+const { Header } = Layout;
 
 class Main extends Component {
   state = {
@@ -13,13 +19,16 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Sidebar routes={routes} />
-        <div className="wrapper">
-          <Header leagues={this.state.leagues} />
-          <div className="content">{this.props.children}</div>
-        </div>
-      </div>
+      <Provider value={this.state.leagues}>
+        <Layout style={{ minHeight: "100vh" }}>
+          <Sidebar routes={routes} />
+          <Layout>
+            <Header style={{ background: "#fff", padding: 0 }} />
+            {this.props.children}
+            <Footer />
+          </Layout>
+        </Layout>
+      </Provider>
     );
   }
 }

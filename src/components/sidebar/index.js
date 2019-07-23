@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './style.scss'
+import { Layout, Menu, Icon } from 'antd';
+const { Sider } = Layout;
 
 function Sidebar(props) {
+
+  const [collapsed, setCollapsed] = useState(false);
+
+  const onCollapse = collapsed => {
+    setCollapsed(collapsed);
+  };
+
   return (
-    <div className="sidebarWrapper">
-      <div className="logo">
-        <img src="" alt="" />
-      </div>
-      {props.routes
-        .filter(route => !route.hidden)
-        .map(route => (
-          <Link to={route.path}>{route.name}</Link>
-      ))}
-    </div>
+    <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+      <div className="logo" />
+      <Menu theme="dark" mode="inline">
+        {props.routes.map((route, i) => (
+          <Menu.Item key={i}>
+            <Link to={route.path}>
+              <Icon type={route.icon} />
+              <span>{route.name}</span>
+            </Link>
+          </Menu.Item>
+        ))}
+      </Menu>
+    </Sider>
   );
 }
 
