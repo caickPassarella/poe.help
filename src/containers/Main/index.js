@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import './style.scss'
-
-import { Provider } from '../Context';
-
+import { Provider } from '../../contexts';
 import routes from '../../routes';
-
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 //import Header from "../../components/Header";
-
 import { Layout } from 'antd';
+
 const { Header } = Layout;
 
 class Main extends Component {
@@ -19,7 +16,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Provider value={this.state.leagues}>
+      <Provider value={this.state}>
         <Layout style={{ minHeight: "100vh" }}>
           <Sidebar routes={routes} />
           <Layout>

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Layout, Breadcrumb } from 'antd';
-import Context from '../../containers/Context';
+import Context from '../../contexts';
 const { Content } = Layout;
 
 function Act(props) {
-  const leagues = useContext(Context);
-  console.log(leagues);
+  const state = useContext(Context);
+  console.log(state);
 
   return (
     <Content style={{ margin: "0 16px" }}>
