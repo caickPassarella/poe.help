@@ -4,14 +4,19 @@ import { Provider } from '../../contexts';
 import routes from '../../routes';
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
-//import Header from "../../components/Header";
+import MainHeader from "../../components/Header";
 import { Layout } from 'antd';
 
-const { Header } = Layout;
-
 class Main extends Component {
+
   state = {
-    leagues: ['Hardcore Legion', 'Softcore Legion', 'Hardcore', 'Softcore']
+    leagues: ['Hardcore Legion', 'Softcore Legion', 'Hardcore', 'Softcore'],
+    selectedLeague: 'Hardcore Legion',
+    handleStateChange: (payload) => this.handleStateChange(payload)
+  };
+
+  handleStateChange(payload) {
+    this.setState(payload);
   };
 
   render() {
@@ -20,7 +25,7 @@ class Main extends Component {
         <Layout style={{ minHeight: "100vh" }}>
           <Sidebar routes={routes} />
           <Layout>
-            <Header style={{ background: "#fff", padding: 0 }} />
+            <MainHeader/>
             {this.props.children}
             <Footer />
           </Layout>
