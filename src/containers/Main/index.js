@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './style.scss'
+import './style.scss';
 import { Provider } from '../../contexts';
 import routes from '../../routes';
 import Sidebar from "../../components/Sidebar";
@@ -12,16 +12,17 @@ class Main extends Component {
   state = {
     leagues: ['Hardcore Legion', 'Softcore Legion', 'Hardcore', 'Softcore'],
     selectedLeague: 'Hardcore Legion',
-    handleStateChange: (payload) => this.handleStateChange(payload)
   };
 
-  handleStateChange(payload) {
+  // Using arrow function to bypass constructor and bindind
+  handleStateChange = payload => {
     this.setState(payload);
   };
 
   render() {
+    const { handleStateChange, state } = this;
     return (
-      <Provider value={this.state}>
+      <Provider value={{ state, handleStateChange }}>
         <Layout style={{ minHeight: "100vh" }}>
           <Sidebar routes={routes} />
           <Layout>

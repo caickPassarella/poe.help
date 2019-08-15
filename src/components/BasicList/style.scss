@@ -1,0 +1,9 @@
+.list {
+  & li {
+    padding: 16px;
+    transition-duration: .1s;
+    &:hover {
+      background-color: #fbfbfb;
+    }
+  }
+}

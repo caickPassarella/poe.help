@@ -5,10 +5,10 @@ import Context from '../../contexts';
 
 function MainHeader(props) {
   const { Header } = Layout;
-  const state = useContext(Context);
+  const {state, handleStateChange} = useContext(Context);
 
   const handleClick = function({key}) {
-    state.handleStateChange({
+    handleStateChange({
       selectedLeague: state.leagues[key]
     });
   };
