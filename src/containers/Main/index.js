@@ -6,18 +6,38 @@ import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import MainHeader from "../../components/Header";
 import { Layout } from 'antd';
+import APIClient from '../../api';
 
 class Main extends Component {
 
   state = {
-    leagues: ['Hardcore Legion', 'Softcore Legion', 'Hardcore', 'Softcore'],
-    selectedLeague: 'Hardcore Legion',
+    leagues: [],
+    selectedLeague: 'Select your league',
+    acts: [],
   };
 
   // Using arrow function to bypass constructor and bindind
   handleStateChange = payload => {
     this.setState(payload);
   };
+
+  async getLeagues() {
+    const poeLeagues = await APIClient.getLeagues();
+    const leagues = poeLeagues.filter(league => league.id.indexOf('SSF ') === -1);
+    this.setState({leagues})
+  }
+
+  getActs() {
+    const acts = APIClient.getActs();
+    console.log(acts);
+    this.setState({acts});
+    console.log(acts);
+  }
+
+  componentDidMount() {
+    this.getLeagues();
+    this.getActs();
+  }
 
   render() {
     const { handleStateChange, state } = this;

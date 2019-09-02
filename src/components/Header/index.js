@@ -5,11 +5,11 @@ import Context from '../../contexts';
 
 function MainHeader(props) {
   const { Header } = Layout;
-  const {state, handleStateChange} = useContext(Context);
+  const { state, handleStateChange } = useContext(Context);
 
   const handleClick = function({key}) {
     handleStateChange({
-      selectedLeague: state.leagues[key]
+      selectedLeague: state.leagues[key].id
     });
   };
   
@@ -17,7 +17,7 @@ function MainHeader(props) {
     <Menu onClick={handleClick}>
       {state.leagues.map((league, i) => (
         <Menu.Item key={i}>
-          {league}
+          {league.id}
         </Menu.Item>
       ))}
     </Menu>

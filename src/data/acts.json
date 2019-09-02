@@ -1,0 +1,54 @@
+{
+  "acts": [
+    {
+      "id": "1",
+      "name": "Act 1",
+      "bosses": ["boss 1", "boss 2", "boss 3"]
+    },
+    {
+      "id": "2",
+      "name": "Act 2",
+      "bosses": ["boss 4", "boss 5", "boss 6"]
+    },
+    {
+      "id": "3",
+      "name": "Act 3",
+      "bosses": ["boss 7", "boss 8", "boss 9"]
+    },
+    {
+      "id": "4",
+      "name": "Act 4",
+      "bosses": ["boss 10", "boss 11", "boss 12"]
+    },
+    {
+      "id": "5",
+      "name": "Act 5",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    },
+    {
+      "id": "6",
+      "name": "Act 6",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    },
+    {
+      "id": "7",
+      "name": "Act 7",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    },
+    {
+      "id": "8",
+      "name": "Act 8",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    },
+    {
+      "id": "9",
+      "name": "Act 9",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    },
+    {
+      "id": "10",
+      "name": "Act 10",
+      "bosses": ["boss 13", "boss 14", "boss 15"]
+    }
+  ]
+}
