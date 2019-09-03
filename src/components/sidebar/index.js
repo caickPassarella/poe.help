@@ -16,6 +16,7 @@ function Sidebar(props) {
       <div className="logo" />
       <Menu theme="dark" mode="inline">
         {props.routes.map((route, i) => (
+          !route.hidden &&
           <Menu.Item key={i}>
             <Link to={route.path}>
               <Icon type={route.icon} />

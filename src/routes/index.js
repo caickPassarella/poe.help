@@ -2,10 +2,10 @@ import Main from '../containers/Main';
 import Act from '../components/Act';
 import Endgame from '../components/Endgame';
 import Lab from '../components/Lab';
+import Results from '../components/Result';
 
 const routes = [
   {
-    hidden: true,
     name: 'Home',
     path: '/',
     icon: "home",
@@ -28,6 +28,13 @@ const routes = [
     path: '/lab',
     icon: "branches",
     component: Lab
+  },
+  {
+    hidden: true,
+    name: 'Result',
+    path: '/result/:item',
+    icon: "gold",
+    component: Results
   },
 ];
 

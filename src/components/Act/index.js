@@ -1,19 +1,39 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { List } from 'antd';
 import Paper from '../Paper';
 import BasicList from '../BasicList';
+import { withRouter } from 'react-router-dom';
 import './style.scss';
 
 import Context from '../../contexts';
 
-function Act(props) {
+function Act({history}) {
 
   const { state } = useContext(Context);
   const [act, setAct] = useState([]);
+  const [searchItem, setSearchItem] = useState(null);
 
-  const selectAct = function(act) {
-    console.log(act);
-    setAct(act);
+  const selectAct = function(actItem) {
+    setAct(actItem);
+  }
+
+  const selectSearchItem = function(item) {
+    setSearchItem(item);
+    history.push(`result/${item}`);
+  }
+
+  const renderActsList = function(actItem) {
+    return (
+      <List.Item onClick={() => selectAct(actItem)}>{actItem.name}</List.Item>
+    );
+  }
+  
+  const renderSelectedItems = function(item) {
+    return (
+      <>
+        <List.Item onClick={() => selectSearchItem(item)}>{item}</List.Item>
+      </>
+    );
   }
   
   return (
@@ -25,7 +45,7 @@ function Act(props) {
             header: <b>Acts</b>
           }}
           data={state.acts}
-          renderItem={act => <List.Item onClick={() => selectAct(act)}>{act.name}</List.Item>}
+          renderItem={actItem => renderActsList(actItem)}
         />
       </div>
       <div className="list">
@@ -34,12 +54,12 @@ function Act(props) {
             size: "large",
             header: <b>{act.name ? act.name : 'Act'}</b>
           }}
-          data={act.bosses}
-          renderItem={item => <List.Item>{item}</List.Item>}
+          data={act.encounters}
+          renderItem={item => renderSelectedItems(item)}
         />
       </div>
     </Paper>
   );
 }
 
-export default Act;
+export default withRouter(Act);

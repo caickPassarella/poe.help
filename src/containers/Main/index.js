@@ -31,7 +31,6 @@ class Main extends Component {
     const acts = APIClient.getActs();
     console.log(acts);
     this.setState({acts});
-    console.log(acts);
   }
 
   componentDidMount() {
