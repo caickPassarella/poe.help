@@ -29,7 +29,6 @@ class Main extends Component {
 
   getActs() {
     const acts = APIClient.getActs();
-    console.log(acts);
     this.setState({acts});
   }
 

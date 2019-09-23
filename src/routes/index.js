@@ -3,6 +3,7 @@ import Act from '../components/Act';
 import Endgame from '../components/Endgame';
 import Lab from '../components/Lab';
 import Results from '../components/Result';
+import Register from '../components/Register';
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     path: '/result/:item',
     icon: "gold",
     component: Results
+  },
+  {
+    name: 'Register',
+    path: '/register',
+    icon: "user",
+    component: Register
   },
 ];
 

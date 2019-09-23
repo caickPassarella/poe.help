@@ -3,52 +3,52 @@
     {
       "id": "1",
       "name": "Act 1",
-      "encounters": ["rush", "boss 1", "boss 2", "boss 3"]
+      "encounters": ["Act 1 rush", "Brutus", "Merveil"]
     },
     {
       "id": "2",
       "name": "Act 2",
-      "encounters": ["rush", "boss 4", "boss 5", "boss 6"]
+      "encounters": ["Act 2 rush", "boss 4", "boss 5", "boss 6"]
     },
     {
       "id": "3",
       "name": "Act 3",
-      "encounters": ["rush", "boss 7", "boss 8", "boss 9"]
+      "encounters": ["Act 3 rush", "boss 7", "boss 8", "boss 9"]
     },
     {
       "id": "4",
       "name": "Act 4",
-      "encounters": ["rush", "boss 10", "boss 11", "boss 12"]
+      "encounters": ["Act 4 rush", "boss 10", "boss 11", "boss 12"]
     },
     {
       "id": "5",
       "name": "Act 5",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 5 rush", "boss 13", "boss 14", "boss 15"]
     },
     {
       "id": "6",
       "name": "Act 6",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 6 rush", "boss 13", "boss 14", "boss 15"]
     },
     {
       "id": "7",
       "name": "Act 7",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 7 rush", "boss 13", "boss 14", "boss 15"]
     },
     {
       "id": "8",
       "name": "Act 8",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 8 rush", "boss 13", "boss 14", "boss 15"]
     },
     {
       "id": "9",
       "name": "Act 9",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 9 rush", "boss 13", "boss 14", "boss 15"]
     },
     {
       "id": "10",
       "name": "Act 10",
-      "encounters": ["rush", "boss 13", "boss 14", "boss 15"]
+      "encounters": ["Act 10 rush", "boss 13", "boss 14", "boss 15"]
     }
   ]
 }
