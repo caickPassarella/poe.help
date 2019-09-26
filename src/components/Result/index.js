@@ -1,10 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import Paper from '../Paper';
-import './style.scss';
+import styled from 'styled-components';
 import { Table, Button, Tag } from 'antd';
+import { getUsersByService } from '../../api';
 
-import APIClient from '../../api';
+const TableWrapper = styled(Table)`
+  width: 100%;
+  background-color: #fff;
+`;
 
 function Results({match, location}) {
   
@@ -32,7 +36,7 @@ function Results({match, location}) {
   };
 
   const searchUsers = async function(service) {
-    const users = await APIClient.getUsersByService(service.toLowerCase());
+    const users = await getUsersByService(service.toLowerCase());
     if (users) populateData(users);
   };
   
@@ -62,7 +66,7 @@ function Results({match, location}) {
 
   return (
     <Paper>
-      <Table className="tableWrapper" columns={columns} dataSource={data} />
+      <TableWrapper columns={columns} dataSource={data} />
     </Paper>
   )
 }

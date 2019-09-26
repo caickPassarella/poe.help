@@ -1,15 +1,20 @@
 import React from 'react';
-import './style.scss';
 import { Layout } from 'antd';
+import styled from 'styled-components';
+
+const { Content } = Layout;
+
+const StyledContent = styled(Content)`
+  margin: 40px 40px 0 40px;
+`;
 
 function Paper({children}) {
-  const { Content } = Layout;
   return (
-    <Content className="content">
+    <StyledContent>
       <div className="wrapper">
         {children}
       </div>
-    </Content>
+    </StyledContent>
   );
 }
 

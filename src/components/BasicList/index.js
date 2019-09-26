@@ -1,14 +1,23 @@
 import React from 'react';
-import './style.scss';
 import { List } from 'antd';
+import styled from 'styled-components';
+
+const StyledList = styled(List)`
+  & li {
+    padding: 16px;
+    transition-duration: .1s;
+    &:hover {
+      background-color: #fbfbfb;
+    }
+  }
+`;
 
 function BasicList({data, renderItem, settings}) {
   return (
-    <List
+    <StyledList
       {...settings}
       dataSource={data}
       renderItem={renderItem}
-      className="list"
     />
   );
 }

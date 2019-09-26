@@ -33,7 +33,6 @@ const TreeTransfer = ({ dataSource, targetKeys, ...restProps }) => {
       {...restProps}
       targetKeys={targetKeys}
       dataSource={transferDataSource}
-      className="tree-transfer"
       render={item => item.title}
       showSelectAll={false}
     >

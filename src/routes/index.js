@@ -1,9 +1,5 @@
 import Main from '../containers/Main';
-import Act from '../components/Act';
-import Endgame from '../components/Endgame';
-import Lab from '../components/Lab';
-import Results from '../components/Result';
-import Register from '../components/Register';
+import { Act, Endgame, Lab, Result, Register, Pricing, Login } from '../components';
 
 const routes = [
   {
@@ -34,14 +30,26 @@ const routes = [
     hidden: true,
     name: 'Result',
     path: '/result/:item',
-    icon: "gold",
-    component: Results
+    component: Result
   },
   {
+    hidden: true,
     name: 'Register',
     path: '/register',
     icon: "user",
     component: Register
+  },
+  {
+    hidden: true,
+    name: 'Pricing',
+    path: '/register/pricing',
+    component: Pricing
+  },
+  {
+    hidden: true,
+    name: 'Login',
+    path: '/login',
+    component: Login
   },
 ];
 

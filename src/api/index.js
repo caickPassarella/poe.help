@@ -41,6 +41,30 @@ function getUsersByService(service) {
   return makeRequest(options);
 }
 
+function getUserByName(name) {
+  const options = {
+    url: `${POE_HELP_API}/user/${name}`,
+    options: {
+      method: 'GET'
+    }
+  }
+
+  return makeRequest(options);
+}
+
+function updateUser(user, payload) {
+  const options = {
+    url: `${POE_HELP_API}/user/${user}`,
+    options: {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    }
+  }
+
+  return makeRequest(options);
+}
+
 function registerUser(user) {
   const options = {
     url: `${POE_HELP_API}/users`,
@@ -54,4 +78,4 @@ function registerUser(user) {
   return makeRequest(options);
 }
 
-export default { getLeagues, getActs, getAct, getUsersByService, registerUser };
+export { getLeagues, getActs, getAct, getUsersByService, getUserByName, registerUser, updateUser };

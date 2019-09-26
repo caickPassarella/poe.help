@@ -1,21 +1,44 @@
 import React, { useContext } from 'react';
 import { Layout, Menu, Dropdown, Icon } from 'antd';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Context from '../../contexts';
 
+const { Header } = Layout;
+
+const StyledHeader = styled(Header)`
+  width: 100%;
+  padding: 0 30px;
+`;
+
+const StyledMenu = styled(Menu)`
+  line-height: 64px;
+  min-width: 200px;
+  
+  .ant-menu-item {
+    float: right;
+  }
+`;
+
+const StyledDropdown = styled(Dropdown)`
+  display: inline-block;
+  min-width: 200px;
+  padding: 0 20px;
+  cursor: pointer;
+`;
 
 function MainHeader(props) {
-  const { Header } = Layout;
-  const { state, handleStateChange } = useContext(Context);
+  const { state: { leagues, selectedLeague, user }, handleStateChange, logout } = useContext(Context);
 
   const handleClick = function({key}) {
     handleStateChange({
-      selectedLeague: state.leagues[key].id
+      selectedLeague: leagues[key].id
     });
   };
   
   const leaguesMenu = (
     <Menu onClick={handleClick}>
-      {state.leagues.map((league, i) => (
+      {leagues.map((league, i) => (
         <Menu.Item key={i}>
           {league.id}
         </Menu.Item>
@@ -23,22 +46,35 @@ function MainHeader(props) {
     </Menu>
   );
   
+  const loginArr = [
+    <Menu.Item>Dashboard</Menu.Item>,
+    <Menu.Item onClick={logout}>Logout</Menu.Item>,
+  ];
+
+  const registerMenuArr = [
+    <Menu.Item>
+      <Link to="/login">Login</Link>
+    </Menu.Item>,
+    <Menu.Item>
+      <Link to="/register">Register</Link>
+    </Menu.Item>
+  ];
+
+  const renderMenuItems = function(menuArr) {
+    return menuArr.map(menu => menu);
+  }
+
   return (
-    <Header style={{ width: "100%", padding: '0 30px' }}>
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        style={{ lineHeight: "64px" }}
-      >
-        <Menu.Item>nav 1</Menu.Item>
-        <Menu.Item>nav 2</Menu.Item>
-        <Dropdown overlay={leaguesMenu} trigger={["click"]}>
-          <a style={{padding: '0px 20px', float: "right"}} href="#">
-            {state.selectedLeague} <Icon type="down" />
-          </a>
-        </Dropdown>
-      </Menu>
-    </Header>
+    <StyledHeader>
+      <StyledMenu theme="dark" mode="horizontal">
+        <StyledDropdown overlay={leaguesMenu} trigger={["click"]}>
+          <div>
+            {selectedLeague} <Icon type="down" />
+          </div>
+        </StyledDropdown>
+        {user ? renderMenuItems(loginArr) : renderMenuItems(registerMenuArr)}
+      </StyledMenu>
+    </StyledHeader>
   );
 }
 

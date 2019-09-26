@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
+import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 import Context from '../../contexts';
 import TreeTransfer from '../TreeTransfer';
-import './style.scss';
-import APIClient from  '../../api';
+import { registerUser, getUserByName } from  '../../api';
 import {
   Form,
   Input,
@@ -12,10 +13,18 @@ import {
   Col
 } from 'antd';
 
+const StyledForm = styled(Form)`
+  margin: 40px 40px 0 40px;
+
+  .formLeft {
+    margin-right: 40px;
+  }
+`;
+
 const { Option } = Select;
 
 function Register(props) {
-  const { state: { leagues, acts } } = useContext(Context);
+  const { state: { leagues, acts }, handleStateChange } = useContext(Context);
   const { getFieldDecorator } = props.form;
   const [targetServices, setTargetServices] = useState([]);
 
@@ -31,7 +40,10 @@ function Register(props) {
           }))
         }
         
-        APIClient.registerUser(userPayload);
+        localStorage.setItem('username', userPayload.name);
+        handleStateChange({user: userPayload});
+        registerUser(userPayload);
+        props.history.push('/register/pricing');
       }
     });
   };
@@ -55,7 +67,7 @@ function Register(props) {
   const treeData = treeActs;
 
   return (
-    <Form className='registerForm' onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <Row>
         <Col className='formLeft' span={8}>
           <Form.Item label="PoE account Name">
@@ -87,7 +99,7 @@ function Register(props) {
             )}
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <Button type="primary" htmlType="submit">
               Register service
             </Button>
           </Form.Item>
@@ -98,10 +110,10 @@ function Register(props) {
           )}
         </Col>
       </Row>
-    </Form>
+    </StyledForm>
   );
 }
 
 const WrappedRegistrationForm = Form.create({ name: 'register' })(Register);
 
-export default WrappedRegistrationForm;
+export default withRouter(WrappedRegistrationForm);

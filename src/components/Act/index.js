@@ -1,11 +1,24 @@
 import React, { useState, useContext } from 'react';
+import styled from 'styled-components';
 import { List } from 'antd';
 import Paper from '../Paper';
 import BasicList from '../BasicList';
-import { withRouter } from 'react-router-dom';
-import './style.scss';
-
 import Context from '../../contexts';
+import { withRouter } from 'react-router-dom';
+
+const StyledList = styled.div`
+  padding: 24px;
+  background: #fff;
+  width: 100%
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background: #fff;
+`;
 
 function Act({history}) {
 
@@ -38,26 +51,28 @@ function Act({history}) {
   
   return (
     <Paper>
-      <div className="list">
-        <BasicList
-          settings={{
-            size: "large",
-            header: <b>Acts</b>
-          }}
-          data={state.acts}
-          renderItem={actItem => renderActsList(actItem)}
-        />
-      </div>
-      <div className="list">
-        <BasicList
-          settings={{
-            size: "large",
-            header: <b>{act.name ? act.name : 'Act'}</b>
-          }}
-          data={act.encounters}
-          renderItem={item => renderSelectedItems(item)}
-        />
-      </div>
+      <Wrapper>
+        <StyledList>
+          <BasicList
+            settings={{
+              size: "large",
+              header: <b>Acts</b>
+            }}
+            data={state.acts}
+            renderItem={actItem => renderActsList(actItem)}
+          />
+        </StyledList>
+        <StyledList>
+          <BasicList
+            settings={{
+              size: "large",
+              header: <b>{act.name ? act.name : "Act"}</b>
+            }}
+            data={act.encounters}
+            renderItem={item => renderSelectedItems(item)}
+          />
+        </StyledList>
+      </Wrapper>
     </Paper>
   );
 }
