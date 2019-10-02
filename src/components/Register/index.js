@@ -43,7 +43,7 @@ function Register(props) {
         localStorage.setItem('username', userPayload.name);
         handleStateChange({user: userPayload});
         registerUser(userPayload);
-        props.history.push('/register/pricing');
+        props.history.push('/controller');
       }
     });
   };
@@ -63,8 +63,6 @@ function Register(props) {
       children: encounters
     }   
   });
-
-  const treeData = treeActs;
 
   return (
     <StyledForm onSubmit={handleSubmit}>
@@ -105,8 +103,9 @@ function Register(props) {
           </Form.Item>
         </Col>
         <Col span={15}>
+          <div style={{marginBottom: '10px'}}>Initial Services</div>
           {getFieldDecorator("services")(
-            <TreeTransfer dataSource={treeData} targetKeys={targetServices} onChange={onChange} />
+            <TreeTransfer dataSource={treeActs} targetKeys={targetServices} onChange={onChange} />
           )}
         </Col>
       </Row>

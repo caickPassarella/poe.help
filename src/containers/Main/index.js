@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
-import './style.scss';
 import { Provider } from '../../contexts';
 import routes from '../../routes';
 import { Sidebar, Footer, Header } from "../../components/";

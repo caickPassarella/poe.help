@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Paper from '../Paper';
 import styled from 'styled-components';
 import { Table, Button, Tag } from 'antd';
 import { getUsersByService } from '../../api';
+import Context from '../../contexts';
 
 const TableWrapper = styled(Table)`
   width: 100%;
@@ -12,6 +13,7 @@ const TableWrapper = styled(Table)`
 
 function Results({match, location}) {
   
+  const { state: { selectedLeague } } = useContext(Context);
   const [data, setData] = useState([]);
 
   const {params: {item: serviceParam}} = match;
@@ -24,11 +26,13 @@ function Results({match, location}) {
   }
 
   const populateData = function(data) {
-    const rows = data.map((val, i) => ({
+    const leagueData = data.filter(user => user.league === selectedLeague);
+    const rows = leagueData.map((val, i) => ({
       key: i,
       name: val.name,
       service: val.services.filter(service => service.name === serviceParam.toLowerCase())[0].name,
       price: val.services.filter(service => service.name === serviceParam.toLowerCase())[0].price,
+      league: val.league,
       actions: defaultActions
     }));
 
@@ -42,7 +46,7 @@ function Results({match, location}) {
   
   useEffect(() => {
     searchUsers(serviceParam);
-  }, [serviceParam]);
+  }, [serviceParam, selectedLeague]);
 
   const columns = [
     {
@@ -56,6 +60,10 @@ function Results({match, location}) {
     {
       title: 'Price',
       dataIndex: 'price',
+    },
+    {
+      title: 'League',
+      dataIndex: 'league'
     },
     {
       title: 'Actions',

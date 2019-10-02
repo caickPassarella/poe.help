@@ -65,6 +65,20 @@ function updateUser(user, payload) {
   return makeRequest(options);
 }
 
+function updateServices(user, payload) {
+  console.log(payload);
+  const options = {
+    url: `${POE_HELP_API}/user/services/${user}`,
+    options: {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    }
+  }
+
+  return makeRequest(options);
+}
+
 function registerUser(user) {
   const options = {
     url: `${POE_HELP_API}/users`,
@@ -78,4 +92,13 @@ function registerUser(user) {
   return makeRequest(options);
 }
 
-export { getLeagues, getActs, getAct, getUsersByService, getUserByName, registerUser, updateUser };
+export {
+  getLeagues,
+  getActs,
+  getAct,
+  getUsersByService,
+  getUserByName,
+  registerUser,
+  updateUser,
+  updateServices
+};

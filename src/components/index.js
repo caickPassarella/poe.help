@@ -11,6 +11,9 @@ import Footer from '../components/Footer';
 import Endgame from '../components/Endgame';
 import BasicList from '../components/BasicList';
 import Act from '../components/Act';
+import Controller from '../components/Controller';
+import Dropdown from '../components/Dropdown';
+import Services from '../components/Services';
 
 export {
   TreeTransfer,
@@ -25,5 +28,8 @@ export {
   Footer,
   Endgame,
   BasicList,
-  Act
+  Act,
+  Controller,
+  Dropdown,
+  Services
 }

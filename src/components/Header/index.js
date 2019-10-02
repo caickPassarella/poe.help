@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { Layout, Menu, Dropdown, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Context from '../../contexts';
+import Dropdown from '../Dropdown';
 
 const { Header } = Layout;
 
@@ -20,13 +21,6 @@ const StyledMenu = styled(Menu)`
   }
 `;
 
-const StyledDropdown = styled(Dropdown)`
-  display: inline-block;
-  min-width: 200px;
-  padding: 0 20px;
-  cursor: pointer;
-`;
-
 function MainHeader(props) {
   const { state: { leagues, selectedLeague, user }, handleStateChange, logout } = useContext(Context);
 
@@ -36,26 +30,16 @@ function MainHeader(props) {
     });
   };
   
-  const leaguesMenu = (
-    <Menu onClick={handleClick}>
-      {leagues.map((league, i) => (
-        <Menu.Item key={i}>
-          {league.id}
-        </Menu.Item>
-      ))}
-    </Menu>
-  );
-  
   const loginArr = [
-    <Menu.Item>Dashboard</Menu.Item>,
-    <Menu.Item onClick={logout}>Logout</Menu.Item>,
+    <Menu.Item key={0}>Dashboard</Menu.Item>,
+    <Menu.Item key={1} onClick={logout}>Logout</Menu.Item>,
   ];
 
   const registerMenuArr = [
-    <Menu.Item>
+    <Menu.Item key={0}>
       <Link to="/login">Login</Link>
     </Menu.Item>,
-    <Menu.Item>
+    <Menu.Item key={1}>
       <Link to="/register">Register</Link>
     </Menu.Item>
   ];
@@ -67,11 +51,7 @@ function MainHeader(props) {
   return (
     <StyledHeader>
       <StyledMenu theme="dark" mode="horizontal">
-        <StyledDropdown overlay={leaguesMenu} trigger={["click"]}>
-          <div>
-            {selectedLeague} <Icon type="down" />
-          </div>
-        </StyledDropdown>
+        <Dropdown data={leagues} selected={selectedLeague} handleClick={handleClick} />
         {user ? renderMenuItems(loginArr) : renderMenuItems(registerMenuArr)}
       </StyledMenu>
     </StyledHeader>

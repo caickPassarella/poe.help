@@ -1,5 +1,5 @@
 import Main from '../containers/Main';
-import { Act, Endgame, Lab, Result, Register, Pricing, Login } from '../components';
+import { Act, Endgame, Lab, Result, Register, Login, Controller, Services } from '../components';
 
 const routes = [
   {
@@ -41,9 +41,15 @@ const routes = [
   },
   {
     hidden: true,
-    name: 'Pricing',
-    path: '/register/pricing',
-    component: Pricing
+    name: 'Controller',
+    path: '/controller',
+    component: Controller
+  },
+  {
+    hidden: true,
+    name: 'Services',
+    path: '/services',
+    component: Services
   },
   {
     hidden: true,
