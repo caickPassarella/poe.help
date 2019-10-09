@@ -4,13 +4,14 @@ import { Provider } from '../../contexts';
 import routes from '../../routes';
 import { Sidebar, Footer, Header } from "../../components/";
 import { Layout } from 'antd';
-import { getLeagues, getActs, getUserByName } from '../../api';
+import { getLeagues, getActs, getMaps, getUserByName } from '../../api';
 class Main extends Component {
 
   state = {
     leagues: [],
     selectedLeague: 'Select your league',
     acts: [],
+    maps: [],
     user: null
   };
 
@@ -30,6 +31,11 @@ class Main extends Component {
     this.setState({acts});
   }
 
+  getMaps() {
+    const maps = getMaps();
+    this.setState({maps});
+  }
+
   async getRegisteredUser() {
     const username = localStorage.getItem('username');
     if (username) {
@@ -47,6 +53,7 @@ class Main extends Component {
   componentDidMount() {
     this.getLeagues();
     this.getActs();
+    this.getMaps();
     this.getRegisteredUser();
   }
 

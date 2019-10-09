@@ -11,37 +11,54 @@ const StyledForm = styled(Form)`
 `;
 
 function Services(props) {
-  const { state: { user, acts } } = useContext(Context);
+  const { state: { user, acts, maps }, handleStateChange } = useContext(Context);
   const { getFieldDecorator } = props.form;
   const [targetServices, setTargetServices] = useState([]);
+  const [arrangedMaps, setArrangedMaps] = useState([]);
+  const [consolidatedData, setConsolidatedData] = useState([]);
 
   const handleSubmit = function(e) {
     e.preventDefault();
     props.form.validateFieldsAndScroll((err, values) => {
       if (!err && values.services) {
         const services = values.services.map(service => ({
-          name: service,
+          name: service.toLowerCase(),
           price: filterCurrentServices(user.services, service)
         }));
 
         const userPayload = {
           services,
         };
-        console.log(userPayload);
+        
         updateServices(user.name, userPayload);
-        //props.history.push('/controller');
+        handleStateChange({user: {...user, services}});
+        props.history.push('/controller');
+      } else if (!values.services) {
+        props.history.push('/controller');
       }
     });
   };
 
   useEffect(() => {
-    console.log(user);
     if (user && user.services) {
       const services = user.services.map(service => service.name);
       setTargetServices(services);
     }
   }, [user]);
+  
+  useEffect(() => {
+    const setMaps = function() {
+      const mapsArr = arrangeMaps(maps);
+      setArrangedMaps(mapsArr);
+    }
+    setMaps();
+  }, [maps]);
 
+  useEffect(() => {
+    const data = {acts, maps: arrangedMaps};
+    setConsolidatedData(consolidateTreeData(data));
+  }, [acts, arrangedMaps])
+  
   const filterCurrentServices = function(currentServices, service) {
     const services = currentServices.filter(userService => userService.name === service);
     return services.length ? services[0].price : 0;
@@ -51,17 +68,57 @@ function Services(props) {
     setTargetServices(targetKeys);
   };
 
-  const treeActs = acts.map(act => {
-    const encounters = act.encounters.map(encounter => ({
-      key: encounter,
-      title: encounter
+  const arrangeMaps = function(maps) {
+    return maps.reduce((prev, curr, _, arr) => {
+      const tierMapNames = arr
+        .filter(val => val.tier === curr.tier)
+        .map(val => val.name);
+      prev[curr.tier] = tierMapNames;
+      return prev;
+    }, {});
+  };
+
+  const consolidateTreeData = function(data) {
+    const { acts, maps } = data;
+
+    const actsData = acts.map(act => {
+      const bossEncounters = act.encounters.map(encounter => ({
+        key: encounter,
+        title: encounter
+      }));
+      
+      return {
+        key: act.name,
+        title: act.name,
+        children: bossEncounters
+      }
+    });
+
+    const mapsData = Object.entries(maps).map(([tier, names]) => {
+      const mapNames = names.map(name => ({
+        key: name,
+        title: name
+      }));
+
+      return {
+        key: `Tier ${tier}`,
+        title: `Tier ${tier}`,
+        children: mapNames 
+      }
+    });
+
+    const services = [
+      {name: 'Acts', data: actsData},
+      {name: 'Maps', data: mapsData}
+    ];
+
+    return services.map(service => ({
+      key: service.name,
+      title: service.name,
+      children: service.data
     }));
-    return {
-      key: act.name,
-      title: act.name,
-      children: encounters
-    }
-  });
+
+  }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
@@ -74,7 +131,7 @@ function Services(props) {
       <Form.Item>
         {getFieldDecorator("services")(
           <TreeTransfer
-            dataSource={treeActs}
+            dataSource={consolidatedData}
             targetKeys={targetServices}
             onChange={onChange}
           />

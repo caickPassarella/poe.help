@@ -1,0 +1,699 @@
+{
+  "maps": [
+    {
+      "name": "Beach Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Dungeon Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Graveyard Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Lookout Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Alleyways Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Arid Lake Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Desert Map",
+      "level": "68",
+      "tier":	"1"
+    },
+    {
+      "name": "Flooded Mine Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Marshes Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Pen Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Arcade Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Burial Chambers Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Cage Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Cells Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Excavation Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Iceberg Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Leyline Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Peninsula Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Port Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Fungal Hollow Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Canyon Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Chateau Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "City Square Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Courthouse Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Glacier Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Grotto Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Lighthouse Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Relic Chambers Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Strand Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Volcano Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Ancient City Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Barrows Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Channel Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Conservatory Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Haunted Mansion Map",
+      "level": "68",
+      "tier":	"1"
+    },
+    {
+      "name": "Ivory Temple Map",
+      "level": "68",
+      "tier":	"1"
+    },
+    {
+      "name": "Maze Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Spider Lair Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Sulphur Vents Map",
+      "level": "68",
+      "tier":	"1"
+    },
+    {
+      "name": "Toxic Sewer Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Academy Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Atoll Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Ashen Wood Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Cemetery Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Fields Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Jungle Valley Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Mausoleum Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Phantasmagoria Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Thicket Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Underground Sea Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Wharf Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Arachnid Nest Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Bazaar Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Bone Crypt Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Coral Ruins Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Dunes Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Gardens Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Lava Chamber Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Ramparts Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Residence Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Underground River Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Armoury Map",
+      "level": "69",
+      "tier":	"2"
+    },
+    {
+      "name": "Courtyard Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Geode Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Infested Valley Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Laboratory Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Mineral Pools Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Mud Geyser Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Overgrown Ruin Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Shore Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Tropical Island Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Vaal Pyramid Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Arena Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Estuary Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Moon Temple Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Museum Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Plateau Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Scriptorium Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Sepulchre Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Temple Map",
+      "level": "77",
+      "tier":	"10"
+    },
+    {
+      "name": "Tower Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Vault Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Waste Pool Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Arachnid Tomb Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Belfry Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Bog",
+      "level": "77",
+      "tier": "10"
+    },
+    {
+      "name": "Cursed Crypt Map",
+      "level": "71",
+      "tier":	"4"
+    },
+    {
+      "name": "Orchard Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Pier Map",
+      "level": "70",
+      "tier":	"3"
+    },
+    {
+      "name": "Precinct Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Shipyard Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Siege Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Wasteland Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Colonnade Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Coves Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Factory Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Mesa Map",
+      "level": "72",
+      "tier":	"5"
+    },
+    {
+      "name": "Lair Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Pit Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Primordial Pool Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Promenade Map",
+      "level": "73",
+      "tier":	"6"
+    },
+    {
+      "name": "Spider Forest Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Waterways Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Castle Ruins Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Crystal Ore Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Defiled Cathedral Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Necropolis Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Overgrown Shrine Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Racecourse Map",
+      "level": "74",
+      "tier":	"7"
+    },
+    {
+      "name": "Summit Map",
+      "level": "82",
+      "tier":	"15"
+    },
+    {
+      "name": "Primordial Blocks Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Villa Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Arsenal Map",
+      "level": "76",
+      "tier":	"9"
+    },
+    {
+      "name": "Caldera Map",
+      "level": "82",
+      "tier":	"15"
+    },
+    {
+      "name": "Core Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Desert Spring Map",
+      "level": "82",
+      "tier":	"15"
+    },
+    {
+      "name": "Ghetto Map",
+      "level": "75",
+      "tier":	"8"
+    },
+    {
+      "name": "Malformation Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Park Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Shrine Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Terrace Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Acid Caverns Map",
+      "level": "82",
+      "tier":	"15"
+    },
+    {
+      "name": "Colosseum Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Crimson Temple Map",
+      "level": "78",
+      "tier":	"11"
+    },
+    {
+      "name": "Dark Forest",
+      "level": "81",
+      "tier": "14"
+    },
+    {
+      "name": "Dig",
+      "level": "78",
+      "tier": "11"
+    },
+    {
+      "name": "Palace Map",
+      "level": "82",
+      "tier":	"15"
+    },
+    {
+      "name": "Plaza Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Basilica Map",
+      "level": "81",
+      "tier":	"14"
+    },
+    {
+      "name": "Carcass Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Lava Lake Map",
+      "level": "79",
+      "tier":	"12"
+    },
+    {
+      "name": "Reef Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Sunken City Map",
+      "level": "80",
+      "tier":	"13"
+    },
+    {
+      "name": "Forge of the Phoenix Map",
+      "level": "83",
+      "tier":	"16"
+    },
+    {
+      "name": "Lair of the Hydra Map",
+      "level": "83",
+      "tier":	"16"
+    },
+    {
+      "name": "Maze of the Minotaur Map",
+      "level": "83",
+      "tier":	"16"
+    },
+    {
+      "name": "Pit of the Chimera Map",
+      "level": "83",
+      "tier":	"16"
+    },
+    {
+      "name": "Vaal Temple Map",
+      "level": "83",
+      "tier":	"16"
+    },
+    {
+      "name": "Crater",
+      "level": "71",
+      "tier": "4"
+    }
+  ]
+}

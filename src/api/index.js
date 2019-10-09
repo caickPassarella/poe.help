@@ -13,9 +13,9 @@ function getLeagues() {
   const options = {
     url: `${POE_API_URL}/leagues`,
     options: {
-      method: 'GET'
+      method: "GET"
     }
-  }
+  };
 
   return makeRequest(options);
 }
@@ -28,6 +28,11 @@ function getActs() {
 function getAct(act) {
   const data = require('../data/acts.json');
   return data.acts.filter(act => act.id = act)
+}
+
+function getMaps() {
+  const data = require('../data/maps.json');
+  return data.maps;
 }
 
 function getUsersByService(service) {
@@ -96,6 +101,7 @@ export {
   getLeagues,
   getActs,
   getAct,
+  getMaps,
   getUsersByService,
   getUserByName,
   registerUser,

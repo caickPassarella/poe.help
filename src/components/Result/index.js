@@ -11,9 +11,9 @@ const TableWrapper = styled(Table)`
   background-color: #fff;
 `;
 
-function Results({match, location}) {
+function Results({match}) {
   
-  const { state: { selectedLeague } } = useContext(Context);
+  const { state: { selectedLeague, user } } = useContext(Context);
   const [data, setData] = useState([]);
 
   const {params: {item: serviceParam}} = match;
@@ -30,7 +30,7 @@ function Results({match, location}) {
     const rows = leagueData.map((val, i) => ({
       key: i,
       name: val.name,
-      service: val.services.filter(service => service.name === serviceParam.toLowerCase())[0].name,
+      service: val.services.filter(service => console.log(val.name, service.name, serviceParam) || service.name === serviceParam.toLowerCase())[0].name,
       price: val.services.filter(service => service.name === serviceParam.toLowerCase())[0].price,
       league: val.league,
       actions: defaultActions
@@ -47,6 +47,10 @@ function Results({match, location}) {
   useEffect(() => {
     searchUsers(serviceParam);
   }, [serviceParam, selectedLeague]);
+  
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   const columns = [
     {

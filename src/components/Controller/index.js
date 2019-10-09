@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { Paper, Pricing, Dropdown } from '../../components'
 import Context from '../../contexts';
+import { getUserByName, updateUser } from '../../api';
 
 const Wrapper = styled.div`
   display: flex
@@ -22,9 +23,20 @@ function Controller(props) {
   const { state: { leagues, user }, handleStateChange } = useContext(Context);
   const [selectedLeague, setSelectedLeague] = useState("Select your league");
 
-  const handleClick = function({key}) {
-    setSelectedLeague(leagues[key].id);
-  };
+  const handleClick = async function({ key }) {
+    const league = leagues[key].id;
+    const userPayload = {...user, league};
+
+    setSelectedLeague(league);
+    handleStateChange({user: userPayload});
+    updateUser(user.name, userPayload);
+  }
+
+  useEffect(() => {
+    if (user) {
+      setSelectedLeague(user.league);
+    }
+  }, [user])
 
   return (
     <Paper>

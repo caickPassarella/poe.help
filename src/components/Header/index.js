@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -25,13 +25,22 @@ function MainHeader(props) {
   const { state: { leagues, selectedLeague, user }, handleStateChange, logout } = useContext(Context);
 
   const handleClick = function({key}) {
-    handleStateChange({
-      selectedLeague: leagues[key].id
-    });
+    const league = leagues[key].id;
+    localStorage.setItem('league', league);
+    handleStateChange({selectedLeague: league});
   };
   
+  useEffect(() => {
+    const league = localStorage.getItem('league');
+    if (league) {
+      handleStateChange({selectedLeague: league});
+    }
+  }, []);
+  
   const loginArr = [
-    <Menu.Item key={0}>Dashboard</Menu.Item>,
+    <Menu.Item key={0}>
+      <Link to="/controller">Controller</Link>
+    </Menu.Item>,
     <Menu.Item key={1} onClick={logout}>Logout</Menu.Item>,
   ];
 

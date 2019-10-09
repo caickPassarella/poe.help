@@ -1,5 +1,5 @@
 import React from 'react';
-import { Transfer, Tree, Input } from 'antd';
+import { Transfer, Tree } from 'antd';
 
 const { TreeNode } = Tree;
 

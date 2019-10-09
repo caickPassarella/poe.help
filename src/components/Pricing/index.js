@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
-import { InputNumber, Row, Col, Form, Button } from 'antd';
+import { InputNumber, Form, Button } from 'antd';
 import styled from 'styled-components';
 import Context from '../../contexts';
 import { updateUser } from '../../api';
@@ -21,9 +21,18 @@ const PriceWrapper = styled.div`
   }
 `;
 
+const FlexDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ServiceItem = styled.div`
+  margin-right: 12px
+`;
+
 function Pricing(props) {
 
-  const { state: { user } } = useContext(Context);
+  const { state: { user }, handleStateChange } = useContext(Context);
   const { getFieldDecorator } = props.form;
 
   const handleSubmit = function(e) {
@@ -35,33 +44,31 @@ function Pricing(props) {
           price
         }));
 
-        const userPayload = {
-          services,
-        };
+        const userPayload = {...user, services};
         updateUser(user.name, userPayload);
-        props.history.push('/controller');
+        handleStateChange({user: userPayload});
       }
     });
   };
-
+  
   return (
     <Form onSubmit={handleSubmit}>
       {user && (
         <PriceWrapper>
           <h2>Pricing</h2>
           <h3>Set the price for your services</h3>
-          <Row gutter={32}>
+          <FlexDiv>
             {user.services.map((service, index) => (
-              <Col key={index} sm={8} lg={4}>
+              <ServiceItem key={index}>
                 <label title="">{service.name}</label>
                 <Form.Item>
-                  {getFieldDecorator(service.name, { initialValue: 0 })(
+                  {getFieldDecorator(service.name, { initialValue: service.price })(
                     <InputNumber min={0} />
                   )}
                 </Form.Item>
-              </Col>
+              </ServiceItem>
             ))}
-          </Row>
+          </FlexDiv>
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Save pricing
